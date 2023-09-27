@@ -13,5 +13,7 @@ int main()
     auto v = matrix(n,e);
     vector<bool> visit(n,false);
     dfs(v,0,visit);
+    co<<nl;
+    bfs(v,0,visit);
     return 0;
 }
