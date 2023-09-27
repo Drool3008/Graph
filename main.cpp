@@ -1,4 +1,5 @@
 #include "AdjacenyMatrix.h"
+#include "traversal.h"
 #include <map>
 #define co std::cout
 #define ci std::cin
@@ -10,7 +11,7 @@ int main()
     co<<nl<<"Enter Number of edges and vertices : "<<nl;
     ci>>n>>e;
     auto v = matrix(n,e);
-    unordered_map<int,bool> map;
-
+    vector<bool> visit(n,false);
+    dfs(v,0,visit);
     return 0;
 }
