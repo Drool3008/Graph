@@ -17,8 +17,9 @@ void dfs(vector<vector<int>>v,int sv,vector<bool>& visit)
     visit[sv]=true;
     for(int i =0;i<n;i++) if(v[sv][i]==1 && !visit[i]) dfs(v,i,visit);
 }
-void bfs(vector<vector<int>>v,int sv,vector<bool>&visit)
+void bfs(vector<vector<int>>v,int sv)
 {
+    vector<bool>visit(v.size(),false);
     int n = v.size();
     queue<int> q;
     visit[sv]= true;
@@ -26,8 +27,15 @@ void bfs(vector<vector<int>>v,int sv,vector<bool>&visit)
     while(!q.empty())
     {
         int t =q.front();
-        for(int i = 0;i<n;i++) if(v[t][i]==1 && !visit[i]) q.push(i);
         q.pop();
         std::cout<<t<<" ";
+        for(int i = 0;i<n;i++)
+        {
+            if(v[t][i]==1 && !visit[i])
+            {
+                q.push(i);
+                visit[i]=true;
+            }
+        }
     }
 }
