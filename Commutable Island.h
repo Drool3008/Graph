@@ -17,7 +17,9 @@ int find(int i,int parent[])
     while(parent[i]!= i) i=parent[i];
     return i;
 }
-bool cmp(vector<int>&a ,vector<int>&b) {return a[2]<b[2];}
+bool cmp(vector<int>const &a ,vector<int>const &b) {
+    return a[2]<b[2];
+}
 int todo(int A, vector<vector<int> > &B) {
     sort(B.begin(),B.end(),cmp);
     int parent[A+1];
