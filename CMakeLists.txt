@@ -9,4 +9,6 @@ add_executable(Graph main.cpp
         traversal_for_DisconnectedGraph.h
         Kruskal.h
         Prims.h
-        "Commutable Island.h")
+        "Commutable Island.h"
+        Dijikstra.h
+        Topological_sort.h)
